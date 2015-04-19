@@ -6,10 +6,22 @@ public abstract class AbstractWeapon : AbstractEquipment {
 	public	float	attacksPerSecond	= 4;
 	private	float	nextAttack			= 0;
 
+	public	bool		useMagazine		= false;
+	public	bool		reloading		= false;
+
+	public	int			magazineCount	= 0;
+	public	int			magazineMax		= 3;
+	public	float		reloadTime		= 2;
+
 	void Update() {
 		if( !linkedInventory.linkedActor.doAttack  ) return;	// if the linked actor is not attacking, do nothing
 		if( nextAttack >= Time.time ) return;	// if it has been too short a time since the last attack, do nothing
-		nextAttack = Time.time + ( 1f / attacksPerSecond );
+		if( reloading ) { reloading		= false; magazineCount	= 0; }
+		if( useMagazine ) {
+			magazineCount++;
+			if( magazineCount < magazineMax ) reloading = true;
+		}
+		nextAttack = Time.time + ( 1f / attacksPerSecond ) + ( reloading ? reloadTime : 0 );
 		Attack();
 	}
 
