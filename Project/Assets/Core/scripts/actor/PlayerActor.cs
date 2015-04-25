@@ -8,12 +8,6 @@ public class PlayerActor : AbstractActor {
 
 	public	float		moveForce	= 20;
 
-	public override bool doAttack {
-		get {
-			return Input.GetButton( "Joy1RightButton" );
-		}
-	}
-
 	protected override void Awake() {
 #if lazyInspector
 		if( rigidbody == null ) rigidbody = gameObject.GetComponent<Rigidbody>();
@@ -39,6 +33,10 @@ public class PlayerActor : AbstractActor {
 		rotationAxis += OrientedVector3( cameraBase.transform.forward ) * Input.GetAxisRaw( "Joy1RightStickY" );
 		rotationAxis += OrientedVector3( cameraBase.transform.right ) * Input.GetAxisRaw( "Joy1RightStickX" );
 		if( rotationAxis.magnitude > 0.1f ) transform.LookAt( transform.position + rotationAxis );
+
+		// Check if the player is using their first ability
+		//if(!doAbility1) return;
+
 	}
 
 	void FixedUpdate() {

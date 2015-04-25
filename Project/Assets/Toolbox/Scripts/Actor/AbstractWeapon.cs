@@ -13,8 +13,38 @@ public abstract class AbstractWeapon : AbstractEquipment {
 	public	int			magazineMax		= 3;
 	public	float		reloadTime		= 2;
 
+	public bool doWeapon1
+	{
+		get
+		{
+			return Input.GetButtonDown ("Joy1TriggerRight");
+		}
+	}
+
+	public bool doWeapon2
+	{
+		get
+		{
+			return Input.GetButtonDown ("Joy1TriggerLeft");
+		}
+	}
+
 	void Update() {
-		if( !linkedInventory.linkedActor.doAttack  ) return;	// if the linked actor is not attacking, do nothing
+		/*if( !linkedInventory.linkedActor.doAttack  ) return;	// if the linked actor is not attacking, do nothing
+		if( nextAttack >= Time.time ) return;	// if it has been too short a time since the last attack, do nothing
+		if( reloading ) { reloading		= false; magazineCount	= 0; }
+		if( useMagazine ) {
+			magazineCount++;
+			if( magazineCount < magazineMax ) reloading = true;
+		}
+		nextAttack = Time.time + ( 1f / attacksPerSecond ) + ( reloading ? reloadTime : 0 );
+		Attack();*/
+	}
+
+	public abstract void Attack();
+
+	public virtual void WeaponTrigger()
+	{
 		if( nextAttack >= Time.time ) return;	// if it has been too short a time since the last attack, do nothing
 		if( reloading ) { reloading		= false; magazineCount	= 0; }
 		if( useMagazine ) {
@@ -24,6 +54,4 @@ public abstract class AbstractWeapon : AbstractEquipment {
 		nextAttack = Time.time + ( 1f / attacksPerSecond ) + ( reloading ? reloadTime : 0 );
 		Attack();
 	}
-
-	public abstract void Attack();
 }
