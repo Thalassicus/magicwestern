@@ -6,6 +6,15 @@
 *.zip
 *.7z
 
+#################
+## Unreal Engine 4
+#################
+*Binaries/
+*DerivedDataCache/
+*Intermediate/
+*Saved/
+*.suo
+*.sdf
 
 #################
 ## Unity
@@ -20,10 +29,10 @@
 *.userprefs
 *.pidb
 *.DS_Store
-*Temp/
-*Build/
-*Builds/
-*obj/
+#*Temp/
+#*Build/
+#*Builds/
+#*obj/
 *Library/
 Thumbs.db
 *.suo
