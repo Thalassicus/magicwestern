@@ -263,7 +263,12 @@ MonoBehaviour:
     type: 0
     hitPoint: {x: 0, y: 0, z: 0}
     source: {fileID: 0}
-  attacksPerSecond: 4
+  attacksPerSecond: 2
+  useMagazine: 0
+  reloading: 0
+  magazineCount: 0
+  magazineMax: 3
+  reloadTime: 2
   projectilePrefab: {fileID: 143404, guid: 89529d427db556d4488407a51bb477f3, type: 2}
   barrelSpawnPoint: {x: 0, y: 1, z: 0}
   fakeBullet: {fileID: 455036}
