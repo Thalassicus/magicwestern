@@ -40,6 +40,10 @@ public class ControlledRandom {
 		return ( Random.value * ( max - min ) ) + min;
 	}
 
+	public static bool CompareValue( float chanceToOccur ) {
+		return Random.value < chanceToOccur;
+	}
+
 	// Picks a random thing from a list of possible things based on the weights of each of yo' things
 	public static int PickRandomWeighted( int[] list ) {
 		int totalWeight	= 0;

@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &109952
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 468760}
+  - 33: {fileID: 3393720}
+  - 23: {fileID: 2376274}
+  m_Layer: 0
+  m_Name: Lazar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &124658
 GameObject:
   m_ObjectHideFlags: 1
@@ -13,6 +30,23 @@ GameObject:
   - 114: {fileID: 11481920}
   m_Layer: 0
   m_Name: Gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &125306
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 440796}
+  - 33: {fileID: 3341202}
+  - 23: {fileID: 2371360}
+  m_Layer: 0
+  m_Name: FakeBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +133,9 @@ Transform:
   m_LocalRotation: {x: -1.1520229e-07, y: -.707106948, z: -.70710659, w: 1.15202347e-07}
   m_LocalPosition: {x: 0, y: .733999968, z: .5}
   m_LocalScale: {x: .300000012, y: .5, z: .300000012}
-  m_Children: []
+  m_Children:
+  - {fileID: 468760}
+  - {fileID: 440796}
   m_Father: {fileID: 464860}
   m_RootOrder: 0
 --- !u!4 &416902
@@ -127,18 +163,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 416902}
   m_RootOrder: 0
+--- !u!4 &440796
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125306}
+  m_LocalRotation: {x: 1.78813963e-07, y: 1, z: -3.12924413e-07, w: -1.4901163e-08}
+  m_LocalPosition: {x: -0, y: 20, z: .0199886151}
+  m_LocalScale: {x: 0, y: 40, z: 6.66666651}
+  m_Children: []
+  m_Father: {fileID: 407386}
+  m_RootOrder: 1
 --- !u!4 &464860
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129322}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: .923879564, z: 0, w: .382683307}
   m_LocalPosition: {x: 0, y: .600000024, z: 0}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children:
   - {fileID: 407386}
   m_Father: {fileID: 499438}
+  m_RootOrder: 0
+--- !u!4 &468760
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109952}
+  m_LocalRotation: {x: 1.62920685e-07, y: 1, z: -3.57627869e-07, w: 2.13162821e-14}
+  m_LocalPosition: {x: 0, y: 20, z: .0199866276}
+  m_LocalScale: {x: .200000003, y: 40, z: 6.66666651}
+  m_Children: []
+  m_Father: {fileID: 407386}
   m_RootOrder: 0
 --- !u!4 &499438
 Transform:
@@ -147,7 +207,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 193640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4.4000001, y: 0, z: 3.1400001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 464860}
@@ -163,7 +223,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -234,6 +294,54 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!23 &2371360
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125306}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 8f8c7bd80fb53eb4c9c9ac8979faa805, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!23 &2376274
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109952}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 8f8c7bd80fb53eb4c9c9ac8979faa805, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!33 &3300798
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -241,6 +349,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129322}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &3341202
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125306}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &3386798
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -248,6 +363,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124658}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &3393720
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109952}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &5446696
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -338,6 +460,10 @@ MonoBehaviour:
   attacksPerSecond: 4
   projectilePrefab: {fileID: 143404, guid: 89529d427db556d4488407a51bb477f3, type: 2}
   barrelSpawnPoint: {x: 0, y: 1, z: 0}
+  fakeBullet: {fileID: 440796}
+  isScalingBullet: 0
+  defaultScale: {x: 0, y: 0, z: 0}
+  currentScale: {x: 0, y: 0, z: 0}
 --- !u!114 &11497722
 MonoBehaviour:
   m_ObjectHideFlags: 1
