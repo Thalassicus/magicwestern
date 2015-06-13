@@ -1,2 +1,7 @@
-,Name,Description,ManaCost,Range,SkillGroup,Uses,NextSkillCooldown
-1000,Scorched Bullet,Shoot a buleet heated to extreme temperatures,2,Med,Gun,-1,10
+,Name,Description,SkillType,EffectIntensity,ManaCost,Range,SkillGroup,Charges,NextSkillCooldown
+GUN0000,Scorched Bullet,[Projectile] Shoot a bullet heated to extreme temperatures.,Attack,2,2,Med,Gun,-1,-1
+GUN0001,Dense Grenade,[Parabola] Fire a parabolic shot that explodes on impact.,Attack,5,3,Med,Gun,1,15
+GUN0002,Rifle Butt,[Launch] Push the target away from you with the backend of your weapon.,Attack,1,1,Short,Gun,-1,-1
+GUN0003,Reload,"[Instant] Grants 3 extra mana. If mana exceeds your capacity, it will remain until used.",Special,3,1,Self,Gun,2,15
+GUN0004,Precision Cancellation,[Cancellation] Fire bullets at all incoming attacks to interrupt them.,Defense,4,3,Short,Gun,-1,-1
+GUN0005,Barrel Block,[Barrier] [Anti-Pierce] Enhance the durability of your gun barrel and block an attack with it.,Defense,2,2,Self,Gun,-1,-1
